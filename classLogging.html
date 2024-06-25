@@ -100,8 +100,6 @@ $(document).ready(function(){initNavTree('classLogging.html',''); initResizable(
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acc3d848a3d05076fd185cd95e9c648d5" id="r_acc3d848a3d05076fd185cd95e9c648d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#acc3d848a3d05076fd185cd95e9c648d5">Logging</a> ()</td></tr>
-<tr class="separator:acc3d848a3d05076fd185cd95e9c648d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8084278589b2244aea9e045f335ea78b" id="r_a8084278589b2244aea9e045f335ea78b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a8084278589b2244aea9e045f335ea78b">begin</a> (int level, Print *output, bool showLevel=true, bool showColors=false)</td></tr>
 <tr class="separator:a8084278589b2244aea9e045f335ea78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15d86da43b329a174d40bf6060cd7f25" id="r_a15d86da43b329a174d40bf6060cd7f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a15d86da43b329a174d40bf6060cd7f25">setLevel</a> (int level)</td></tr>
@@ -124,6 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a56f75c773d8b236d75c345eb92c3cc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad188dcb19731a2299439d3ad366707b3" id="r_ad188dcb19731a2299439d3ad366707b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#ad188dcb19731a2299439d3ad366707b3">clearSuffix</a> ()</td></tr>
 <tr class="separator:ad188dcb19731a2299439d3ad366707b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae598d27bc1921c2e262e1ae2adec3d3f" id="r_ae598d27bc1921c2e262e1ae2adec3d3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#ae598d27bc1921c2e262e1ae2adec3d3f">addHandler</a> (Print *handler)</td></tr>
+<tr class="separator:ae598d27bc1921c2e262e1ae2adec3d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042ff56c63592d29ff4a13e18ec23752" id="r_a042ff56c63592d29ff4a13e18ec23752"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogging.html#a042ff56c63592d29ff4a13e18ec23752">removeHandler</a> (Print *handler)</td></tr>
+<tr class="separator:a042ff56c63592d29ff4a13e18ec23752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41dda7e7738ef5c4e2700509accec236" id="r_a41dda7e7738ef5c4e2700509accec236"><td class="memTemplParams" colspan="2">template&lt;class T , typename... Args&gt; </td></tr>
 <tr class="memitem:a41dda7e7738ef5c4e2700509accec236"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classLogging.html#a41dda7e7738ef5c4e2700509accec236">fatal</a> (T msg, Args... args)</td></tr>
 <tr class="separator:a41dda7e7738ef5c4e2700509accec236"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,7 +176,7 @@ Public Member Functions</h2></td></tr>
 <p>-&mdash; Loglevels</p>
 <p>0 - LOG_LEVEL_SILENT no output 1 - LOG_LEVEL_FATAL fatal errors 2 - LOG_LEVEL_ERROR all errors 3 - LOG_LEVEL_WARNING errors and warnings 4 - LOG_LEVEL_INFO errors, warnings and notices 4 - LOG_LEVEL_NOTICE Same as INFO, kept for backward compatibility 5 - LOG_LEVEL_TRACE errors, warnings, notices, traces 6 - LOG_LEVEL_VERBOSE all </p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00104">104</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00108">108</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acc3d848a3d05076fd185cd95e9c648d5" name="acc3d848a3d05076fd185cd95e9c648d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc3d848a3d05076fd185cd95e9c648d5">&#9670;&#160;</a></span>Logging()</h2>
@@ -194,17 +196,37 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>default Constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00109">109</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00014">14</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae598d27bc1921c2e262e1ae2adec3d3f" name="ae598d27bc1921c2e262e1ae2adec3d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae598d27bc1921c2e262e1ae2adec3d3f">&#9670;&#160;</a></span>addHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logging::addHandler </td>
+          <td>(</td>
+          <td class="paramtype">Print *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a new handler which outputs the stream to another source. For example, you can output to Serial and into a file at the same time. </p>
+
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00111">111</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a8084278589b2244aea9e045f335ea78b" name="a8084278589b2244aea9e045f335ea78b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8084278589b2244aea9e045f335ea78b">&#9670;&#160;</a></span>begin()</h2>
 
@@ -254,7 +276,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00014">14</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00029">29</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,7 +297,7 @@ Public Member Functions</h2></td></tr>
 <p>clears prefix.</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00075">75</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00093">93</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -296,7 +318,7 @@ Public Member Functions</h2></td></tr>
 <p>clears suffix.</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00087">87</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00105">105</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +367,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00245">245</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00248">248</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -385,7 +407,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00251">251</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00254">254</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -434,7 +456,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00223">223</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00226">226</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -474,7 +496,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00229">229</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00232">232</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -495,7 +517,7 @@ template&lt;class T , typename... Args&gt; </div>
 <p>Get the log level.</p>
 <dl class="section return"><dt>Returns</dt><dd>The current log level. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00033">33</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00051">51</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +538,7 @@ template&lt;class T , typename... Args&gt; </div>
 <p>Get whether the log colors are shown during logging</p>
 <dl class="section return"><dt>Returns</dt><dd>true if the log colors are shown for each log false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00061">61</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00079">79</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +559,7 @@ template&lt;class T , typename... Args&gt; </div>
 <p>Get whether the log level is shown during logging</p>
 <dl class="section return"><dt>Returns</dt><dd>true if the log level is be shown for each log false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00047">47</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00065">65</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -577,7 +599,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00301">301</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00304">304</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -617,7 +639,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00307">307</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00310">310</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +688,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00289">289</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00292">292</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -706,7 +728,28 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00295">295</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00298">298</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+
+</div>
+</div>
+<a id="a042ff56c63592d29ff4a13e18ec23752" name="a042ff56c63592d29ff4a13e18ec23752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042ff56c63592d29ff4a13e18ec23752">&#9670;&#160;</a></span>removeHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logging::removeHandler </td>
+          <td>(</td>
+          <td class="paramtype">Print *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes stream handler and stops outputting the data. </p>
+
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00119">119</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -734,7 +777,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00027">27</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00045">45</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -762,7 +805,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00069">69</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00087">87</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -790,7 +833,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00055">55</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00073">73</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -818,7 +861,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00041">41</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00059">59</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -846,7 +889,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00081">81</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8cpp_source.html#l00099">99</a> of file <a class="el" href="ArduinoLog_8cpp_source.html">ArduinoLog.cpp</a>.</p>
 
 </div>
 </div>
@@ -895,7 +938,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00323">323</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00326">326</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -935,7 +978,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00329">329</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00332">332</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -984,7 +1027,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00345">345</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00348">348</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -1024,7 +1067,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00351">351</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00354">354</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -1073,7 +1116,7 @@ template&lt;class T , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00267">267</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00270">270</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1156,7 @@ template&lt;class T , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00273">273</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ArduinoLog_8h_source.html#l00276">276</a> of file <a class="el" href="ArduinoLog_8h_source.html">ArduinoLog.h</a>.</p>
 
 </div>
 </div>
