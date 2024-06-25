@@ -150,8 +150,8 @@ $(document).ready(function(){initNavTree('ArduinoLog_8h_source.html',''); initRe
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define LOG_LEVEL_TRACE   5</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define LOG_LEVEL_VERBOSE 6</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define LOG_COLOR_BOLDRED F(&quot;\033[1;31m&quot;)</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define LOG_COLOR_BOLDWHITE F(&quot;\033[1;37m&quot;)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#define LOG_COLOR_BOLD_RED F(&quot;\033[1;31m&quot;)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define LOG_COLOR_BOLD_WHITE F(&quot;\033[1;37m&quot;)</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define LOG_COLOR_RED &quot;\033[;31m&quot;</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define LOG_COLOR_YELLOW &quot;\033[;33m&quot;</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define LOG_COLOR_GREEN &quot;\033[;32m&quot;</span></div>
@@ -325,7 +325,7 @@ $(document).ready(function(){initNavTree('ArduinoLog_8h_source.html',''); initRe
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            <span class="keywordflow">if</span> (_showColors) {</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>                <span class="keywordflow">switch</span> (level) {</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                <span class="keywordflow">case</span> LOG_LEVEL_FATAL:</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                    _logOutput-&gt;print(LOG_COLOR_BOLDRED);</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                    _logOutput-&gt;print(LOG_COLOR_BOLD_RED);</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                <span class="keywordflow">case</span> LOG_LEVEL_ERROR:</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                    _logOutput-&gt;print(LOG_COLOR_RED);</div>
