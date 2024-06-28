@@ -339,7 +339,7 @@ $(document).ready(function(){initNavTree('ArduinoLog_8h_source.html',''); initRe
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                }</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            }</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            <span class="keywordflow">if</span> (_prefix != NULL) {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>            <span class="keywordflow">if</span> (_prefix != NULL &amp;&amp; _showLevel) {</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _handlerCount; i++) {</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>                    <span class="keywordflow">if</span> (_logOutputs[i]) {</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                        _prefix(_logOutputs[i], level);</div>
@@ -357,7 +357,7 @@ $(document).ready(function(){initNavTree('ArduinoLog_8h_source.html',''); initRe
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            va_start(args, msg);</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            print(msg, args);</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>            <span class="keywordflow">if</span> (_suffix != NULL) {</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>            <span class="keywordflow">if</span> (_suffix != NULL &amp;&amp; _showLevel) {</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _handlerCount; i++) {</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>                    <span class="keywordflow">if</span> (_logOutputs[i]) {</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                        _suffix(_logOutputs[i], level);</div>
