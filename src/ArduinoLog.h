@@ -63,9 +63,25 @@ typedef void (*printfunction)(Print*, int);
 #define LOG_COLOR_WHITE "\033[;37m"
 #define LOG_COLOR_BLACK "\033[;38;5;240m"
 #define LOG_COLOR_END "\033[0m"
+
+#ifndef ARDUINOLOG_DISABLE_LINE_END_DEFINES
+#ifndef CR
 #define CR "\n"
+#else
+#warning "CR already defined"
+#endif
+#ifndef LF
 #define LF "\r"
+#else
+#warning "LF already defined"
+#endif
+#ifndef NL
 #define NL "\n\r"
+#else
+#warning "NL already defined"
+#endif
+#endif
+
 #define LOGGING_VERSION 1_0_4
 
 /**
@@ -107,6 +123,8 @@ typedef void (*printfunction)(Print*, int);
 
 class Logging {
 public:
+    static constexpr char lineEnd[] = "\n";
+
     explicit Logging();
 
     /**
@@ -374,7 +392,7 @@ private:
 
     void printFormat(const char format, va_list *args);
 
-    template <class T> void printLevel(int level, bool cr, T msg, ...) {
+    template <class T> void printLevel(int level, bool newLine, T msg, ...) {
 #ifndef DISABLE_LOGGING
         if (level > _level) {
             return;
@@ -428,8 +446,8 @@ private:
                 }
             }
 
-            if (cr)	{
-                writeLog(CR);
+            if (newLine)	{
+                writeLog(lineEnd);
             }
 
             if (_showColors) {
