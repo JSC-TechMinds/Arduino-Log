@@ -450,7 +450,15 @@ private:
     Print* _logOutputs[LOG_MAX_HANDLERS];
     int _handlerCount;
 
-    template<typename... Args> void writeLog(Args... args);
+#ifndef DISABLE_LOGGING
+    template<typename... Args> void writeLog(Args... args) {
+        for (int i = 0; i < _handlerCount; i++) {
+            if (_logOutputs[i]) {
+                _logOutputs[i]->print(args...);
+            }
+        }
+    }
+#endif
 #ifdef ESP32
     SemaphoreHandle_t _semaphore;
 #endif

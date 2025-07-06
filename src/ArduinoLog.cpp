@@ -279,16 +279,6 @@ void Logging::printFormat(const char format, va_list *args) {
 #endif
 }
 
-#ifndef DISABLE_LOGGING
-template<typename... Args> void Logging::writeLog(Args... args) {
-    for (int i = 0; i < _handlerCount; i++) {
-        if (_logOutputs[i]) {
-            _logOutputs[i]->print(args...);
-        }
-    }
-}
-#endif
-
 #ifndef __DO_NOT_INSTANTIATE__
 Logging Log = Logging();
 #endif
