@@ -13,7 +13,7 @@
 
 Logging::Logging()
 #ifndef DISABLE_LOGGING
-    : _level(LOG_LEVEL_SILENT),
+    : _level(ArduinoLogLevel::LogLevelSilent),
       _showLevel(true),
       _showColors(false),
       _handlerCount(0)
@@ -26,7 +26,17 @@ Logging::Logging()
 {}
 #endif
 
-void Logging::begin(int level, Print* logOutput, bool showLevel, bool showColors) {
+// Static helper function to constrain int values to valid enum range
+ArduinoLogLevel Logging::constrainLevel(int level) {
+    if (level < static_cast<int>(ArduinoLogLevel::LogLevelSilent)) {
+        return ArduinoLogLevel::LogLevelSilent;
+    } else if (level > static_cast<int>(ArduinoLogLevel::LogLevelVerbose)) {
+        return ArduinoLogLevel::LogLevelVerbose;
+    }
+    return static_cast<ArduinoLogLevel>(level);
+}
+
+void Logging::begin(ArduinoLogLevel level, Print* logOutput, bool showLevel, bool showColors) {
 #ifndef DISABLE_LOGGING
     setLevel(level);
     setShowLevel(showLevel);
@@ -45,15 +55,34 @@ void Logging::begin(int level, Print* logOutput, bool showLevel, bool showColors
 #endif
 }
 
-void Logging::setLevel(int level) {
+// Backward compatibility: int overload
+void Logging::begin(int level, Print *logOutput, bool showLevel, bool showColors) {
+    begin(constrainLevel(level), logOutput, showLevel, showColors);
+}
+
+void Logging::setLevel(ArduinoLogLevel level) {
 #ifndef DISABLE_LOGGING
-    _level = constrain(level, LOG_LEVEL_SILENT, LOG_LEVEL_VERBOSE);
+    _level = level;
 #endif
 }
 
-int Logging::getLevel() const {
+// Backward compatibility: int overload
+void Logging::setLevel(int level) {
+    setLevel(constrainLevel(level));
+}
+
+ArduinoLogLevel Logging::getLogLevel() const {
 #ifndef DISABLE_LOGGING
     return _level;
+#else
+    return ArduinoLogLevel::LogLevelSilent;
+#endif
+}
+
+// Backward compatibility: return level as int
+int Logging::getLevel() const {
+#ifndef DISABLE_LOGGING
+    return static_cast<int>(_level);
 #else
     return 0;
 #endif
@@ -278,16 +307,6 @@ void Logging::printFormat(const char format, va_list *args) {
     }
 #endif
 }
-
-#ifndef DISABLE_LOGGING
-template<typename... Args> void Logging::writeLog(Args... args) {
-    for (int i = 0; i < _handlerCount; i++) {
-        if (_logOutputs[i]) {
-            _logOutputs[i]->print(args...);
-        }
-    }
-}
-#endif
 
 #ifndef __DO_NOT_INSTANTIATE__
 Logging Log = Logging();

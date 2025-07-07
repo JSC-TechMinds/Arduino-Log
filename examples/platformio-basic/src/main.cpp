@@ -23,13 +23,13 @@ String stringValue1 = "this is a string";
 float floatValue;
 double doubleValue;
 
-void printTimestamp(Print *_logOutput) {
+void printTimestamp(Print *_logOutput, int) {
   char c[12];
   int m = sprintf(c, "%10lu ", millis());
   _logOutput->print(c);
 }
 
-void printCarret(Print *_logOutput) { _logOutput->print('>'); }
+void printCarret(Print *_logOutput, int) { _logOutput->print('>'); }
 
 void setup() {
   // Set up serial port and wait until connected
